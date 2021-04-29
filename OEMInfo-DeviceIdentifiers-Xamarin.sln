@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31205.134
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OEMInfo-DeviceIdentifiers-Xamarin.Android", "OEMInfo-DeviceIdentifiers-Xamarin.Android\OEMInfo-DeviceIdentifiers-Xamarin.Android.csproj", "{C29483C0-BB24-4CB0-945F-2FF53F2F3F1E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OEMInfo-DeviceIdentifiers-Xamarin", "OEMInfo-DeviceIdentifiers-Xamarin\OEMInfo-DeviceIdentifiers-Xamarin.csproj", "{D0608D16-78AF-4E29-9F37-77B7FC0DDC69}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C29483C0-BB24-4CB0-945F-2FF53F2F3F1E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C29483C0-BB24-4CB0-945F-2FF53F2F3F1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C29483C0-BB24-4CB0-945F-2FF53F2F3F1E}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{C29483C0-BB24-4CB0-945F-2FF53F2F3F1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C29483C0-BB24-4CB0-945F-2FF53F2F3F1E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C29483C0-BB24-4CB0-945F-2FF53F2F3F1E}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{D0608D16-78AF-4E29-9F37-77B7FC0DDC69}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0608D16-78AF-4E29-9F37-77B7FC0DDC69}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0608D16-78AF-4E29-9F37-77B7FC0DDC69}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{D0608D16-78AF-4E29-9F37-77B7FC0DDC69}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0608D16-78AF-4E29-9F37-77B7FC0DDC69}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0608D16-78AF-4E29-9F37-77B7FC0DDC69}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A4E53E65-FE0C-4DE2-A5E3-B2A462DD2814}
+	EndGlobalSection
+EndGlobal
