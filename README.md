@@ -7,11 +7,11 @@ Sample app to show how to retrieve the Serial number, IMEI and more identifiers 
 
 Android 10 limited access to device identifiers for all apps running on the platform regardless of their target API level.  As explained in the docs for [Android 10 privacy changes](https://developer.android.com/about/versions/10/privacy/changes) this includes the serial number, IMEI and some other identifiable information.
 
-**Zebra mobile computers running Android 10 are able to access both the serial number and IMEI** however applications need to be **explicitly granted the ability** to do so and use a proprietary API.
+**Zebra mobile computers running Android 10 are able to access both the serial number and IMEI** (at least) but applications need to be **explicitly granted permission to do so**.
 
-The steps to access are as follows:
+The steps to access device identifiers are as follows:
 1. Grant the application permission to access device identifiers using the [MX access manager](https://techdocs.zebra.com/mx/accessmgr/)
-2. Retrieve the device identifier(s) using the OEMInfo Content Provider.
+2. Retrieve the device identifier(s) using the [OEMInfo](https://techdocs.zebra.com/oeminfo/about/) Content Provider.
 
 ## 1. Grant the application permission to access device identifiers
 
@@ -31,8 +31,8 @@ The MX access manager settings to enable this are as follows:
   - For the IMEI use content://oem_info/wan/imei.  
   - For the Bluetooth MAC address use content://oem_info/oem.zebra.secure/bt_mac
 - If you want to allow your app access to multiple identifers, you will need to invoke AccessManager multiple times.
-- Caller Package Name: Your package name, in the case of this sample it is com.zebra.emdk_deviceidentifiers_sample.
-- Caller Signature: The signing certificate of your application.  For more information on generating this see https://github.com/darryncampbell/MX-SignatureAuthentication-Demo.
+- Caller Package Name: Your package name.
+- Caller Signature: The signing certificate of your application.  For more information on generating this see https://github.com/darryncampbell/MX-SignatureAuthentication-Demo.  This application will determine its own signing certificate at runtime
 
 ``` csharp
 EMDKResults result = mProfileManager.ProcessProfile("GrantSerialId", ProfileManager.PROFILE_FLAG.Set, 
@@ -84,15 +84,15 @@ The below screenshot is taken from a TC52 (note that this is a WLAN only device,
 
 ### Assigning access
 
-If you failed to correctly allow your application access to oem_info service, you will see an error stating so against each property you did not assign access to, as shown below:
+If you failed to correctly allow your application access to oem_info service, you will see something similar to what is shown below:
 
 ![no_service_access](https://github.com/darryncampbell/OEMInfo-DeviceIdentifiers-Sample-Xamarin/raw/main/screenshots/Not%20granted.jpg)
 
-Assign access to your device and re-run the application.  You can do this by pressing the top button, "Request Permission through EMDK Access Mgr"
+Assign access to your device and retrieve the device identifiers.  You can do this by pressing the top button, "Request Permission through EMDK Access Mgr"
 
 ### OEMInfo version
 
-If your device does not support the specified identifier then you will see the same error against that identifier.  For example, I installed this application on a TC57 whose version of OEMInfo was too old to return the BT MAC address:
+If your device does not support the specified identifier then you will see an error against that identifier.  For example, I installed this application on a TC57 whose version of OEMInfo was too old to return the BT MAC address:
 
 ![No BT MAC](https://github.com/darryncampbell/OEMInfo-DeviceIdentifiers-Sample-Xamarin/raw/main/screenshots/tc57.jpg)
 
